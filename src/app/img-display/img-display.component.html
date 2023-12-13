@@ -1,0 +1,7 @@
+<div>
+  <img src="assets/LordRam.jpg" width="300" height="500" *ngIf="buttonClicked"/>
+  <br *ngIf="buttonClicked"/>
+  <button class="btn btn-primary" (click)="buttonClicked = false" *ngIf="buttonClicked">Back</button>
+  <p *ngIf="!buttonClicked">Click the below button to see Ram</p>
+  <button class="btn btn-primary" (click)="buttonClicked = true" *ngIf="!buttonClicked">Click me!</button>
+</div>
