@@ -1,7 +1,9 @@
 <div>
-  <img src="assets/LordRam.jpg" width="300" height="500" *ngIf="buttonClicked"/>
-  <br *ngIf="buttonClicked"/>
-  <button class="btn btn-primary" (click)="buttonClicked = false" *ngIf="buttonClicked">Back</button>
-  <p *ngIf="!buttonClicked">Click the below button to see Ram</p>
+  <ng-template #imageDisplay>
+    <img src="assets/LordRam.jpg" width="300" height="500"/>
+    <br/>
+    <button class="btn btn-primary" (click)="buttonClicked = false">Back</button>
+  </ng-template>
+  <p *ngIf="!buttonClicked; else imageDisplay">Click the below button to see Ram</p>
   <button class="btn btn-primary" (click)="buttonClicked = true" *ngIf="!buttonClicked">Click me!</button>
 </div>
